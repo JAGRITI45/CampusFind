@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFind | Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <h2>Campus<span>Find</span></h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#items">Browse Items</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Homepage Hero Section -->
+        <section class="hero" id="home">
+            <p class="tagline">YOUR CAMPUS, CONNECTED</p>
+
+            <h1>
+                Lost something?<br>
+                <span>Let's find it.</span>
+            </h1>
+
+            <p class="intro">
+                A simple place to report lost belongings and help fellow
+                students reunite with their items.
+            </p>
+
+            <div class="actions">
+                <button id="lostBtn" type="button">
+                    Report Lost Item
+                </button>
+
+                <button id="foundBtn" class="secondary" type="button">
+                    Report Found Item
+                </button>
+            </div>
+        </section>
+
+        <!-- Report Item Form -->
+        <section class="report-section" id="reportSection" hidden>
+            <h2 id="formTitle">Report an Item</h2>
+
+            <p class="form-intro">
+                Enter the item details below.
+            </p>
+
+            <form id="reportForm">
+
+                <label for="itemName">Item Name *</label>
+                <input
+                    type="text"
+                    id="itemName"
+                    name="itemName"
+                    required
+                >
+
+                <label for="category">Category *</label>
+                <select id="category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="ID Card">ID Card</option>
+                    <option value="Wallet">Wallet</option>
+                    <option value="Books">Books</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Bottle">Bottle</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="description">Description</label>
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="3"
+                ></textarea>
+
+                <label for="location">Location *</label>
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    required
+                >
+
+                <label for="itemDate">Date *</label>
+                <input
+                    type="date"
+                    id="itemDate"
+                    name="itemDate"
+                    required
+                >
+
+                <label for="reporterName">Your Name *</label>
+                <input
+                    type="text"
+                    id="reporterName"
+                    name="reporterName"
+                    required
+                >
+
+                <label for="email">Contact Email *</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+
+                <label for="phone">Contact Phone</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                >
+
+                <p class="privacy-note">
+                    Contact details are used to help return reported items.
+                </p>
+
+                <label class="consent-label">
+                    <input
+                        type="checkbox"
+                        id="contactConsent"
+                        name="contactConsent"
+                        required
+                    >
+                    I agree to share my contact details for item recovery.
+                </label>
+
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn">
+                        Submit Report
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="secondary"
+                    >
+                        Cancel
+                    </button>
+                </div>
+
+                <p id="formMessage" role="status" aria-live="polite"></p>
+
+            </form>
+        </section>
+
+        <!-- Browse and Search Items -->
+        <section class="items-section" id="items">
+            <h2>Find an Item</h2>
+
+            <p>
+                Search reports by name, category, or location.
+            </p>
+
+            <div class="search-panel">
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="e.g. wallet, bottle, library"
+                    aria-label="Search item name, category or location"
+                >
+
+                <select id="typeFilter" aria-label="Filter by report type">
+                    <option value="All">All Reports</option>
+                    <option value="Lost">Lost Items</option>
+                    <option value="Found">Found Items</option>
+                </select>
+
+                <button type="button" id="searchBtn">
+                    Search
+                </button>
+
+                <button type="button" id="clearBtn" class="secondary">
+                    Clear
+                </button>
+            </div>
+
+            <p id="resultsMessage" role="status" aria-live="polite"></p>
+
+            <div id="itemsList" class="items-grid">
+                <p>Loading items...</p>
+            </div>
+        </section>
+
+        <!-- Contact Reporter Section -->
+        <section
+            id="contactSection"
+            class="report-section"
+            hidden
+        >
+            <h2>Contact Reporter</h2>
+
+            <p id="contactItemName" class="form-intro"></p>
+
+            <p>
+                <strong>Name:</strong>
+                <span id="contactName"></span>
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <a id="contactEmail"></a>
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                <a id="contactPhone"></a>
+            </p>
+
+            <div class="form-actions">
+                <button
+                    type="button"
+                    id="closeContactBtn"
+                    class="secondary"
+                >
+                    Close
+                </button>
+            </div>
+
+            <p id="contactMessage" role="status" aria-live="polite"></p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>CampusFind · Helping belongings find their way home.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

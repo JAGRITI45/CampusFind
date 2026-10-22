@@ -1,0 +1,297 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: white;
+    box-shadow: 0 3px 15px #1e3c6410;
+}
+
+.navbar h2 {
+    color: #1d3557;
+    font-size: 27px;
+}
+
+.navbar h2 span,
+.hero h1 span {
+    color: #3478f6;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 85px 20px;
+    background: linear-gradient(135deg, #e5efff, white 75%);
+}
+
+.tagline {
+    color: #3478f6;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 62px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.intro {
+    max-width: 580px;
+    margin: auto;
+    color: #64748b;
+    font-size: 17px;
+}
+
+.actions,
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+button {
+    padding: 13px 22px;
+    border: 1px solid #3478f6;
+    border-radius: 8px;
+    background: #3478f6;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #225ed0;
+}
+
+button.secondary {
+    background: white;
+    color: #3478f6;
+}
+
+button.secondary:hover {
+    background: #edf4ff;
+}
+
+.report-section {
+    max-width: 680px;
+    margin: 40px auto;
+    padding: 32px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px #1e3c6412;
+}
+
+.report-section h2,
+.items-section h2 {
+    font-size: 29px;
+    margin-bottom: 8px;
+}
+
+.form-intro,
+.items-section > p {
+    color: #64748b;
+    margin-bottom: 22px;
+}
+
+#reportForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#reportForm > label {
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+#reportForm input:not([type="checkbox"]),
+#reportForm select,
+#reportForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #1e293b;
+    font: inherit;
+}
+
+#reportForm input:focus,
+#reportForm select:focus,
+#reportForm textarea:focus {
+    outline: 2px solid #3478f6;
+    border-color: #3478f6;
+}
+
+.privacy-note {
+    margin-top: 10px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+#reportForm .consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-weight: normal;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.consent-label input {
+    margin-top: 5px;
+}
+
+.form-actions {
+    justify-content: flex-start;
+}
+
+#formMessage {
+    margin-top: 12px;
+    overflow-wrap: anywhere;
+}
+
+.items-section {
+    padding: 60px 8%;
+}
+
+.search-panel {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.search-panel input,
+.search-panel select {
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    font: inherit;
+}
+
+.search-panel input {
+    flex: 1;
+    min-width: 220px;
+}
+
+.search-panel select {
+    min-width: 145px;
+}
+
+#resultsMessage {
+    color: #64748b;
+    margin: 12px 0 20px;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.item-card {
+    background: white;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+    box-shadow: 0 5px 18px #1e3c6410;
+}
+
+.item-card h3 {
+    color: #1d3557;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.item-card p {
+    color: #64748b;
+    margin-top: 8px;
+    overflow-wrap: anywhere;
+}
+
+.item-type {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #e8f0ff;
+    color: #245ac4;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #64748b;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .report-section {
+        margin: 25px 15px;
+        padding: 22px;
+    }
+
+    .items-section {
+        padding: 40px 5%;
+    }
+
+    .search-panel {
+        flex-direction: column;
+    }
+
+    .search-panel input,
+    .search-panel select,
+    .search-panel button {
+        width: 100%;
+    }
+}
